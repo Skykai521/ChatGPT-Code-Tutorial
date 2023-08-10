@@ -110,3 +110,162 @@ public class TestDog {
 - `myDog.bark();`、`myDog.run();`、`myDog.eat();`：我们调用了 `myDog` 对象的方法，使其执行特定的行为。
 
 简而言之，类就像是一个模板，描述了如何创建对象，而对象则是这个模板的具体实例，具有类中定义的属性和行为。
+
+---
+> 请在答案前引用此请求，使用 Markdown 格式解释 Java 中封装、继承和多态，并给出带注释的代码示例。确保中英文之间有空格。
+
+### 1. 封装 (Encapsulation)
+
+封装是面向对象编程的一个主要特点，它是将对象的状态（属性）和行为（方法）结合在一起，同时隐藏对象的内部细节，只暴露出必要的接口。
+
+```java
+public class Person {
+    // 使用 private 修饰符来隐藏内部状态
+    private String name;
+    private int age;
+
+    // 使用公共的构造函数和方法来访问和修改属性
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+```
+
+### 2. 继承 (Inheritance)
+
+继承是一个类（称为子类）继承另一个类（称为父类）的属性和方法。这允许我们创建一个新类，基于已存在的类。
+
+```java
+// 基类或父类
+public class Animal {
+    public void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+// 子类
+public class Dog extends Animal {
+    // Dog 类继承了 Animal 的 eat 方法
+
+    // Dog 类的特有方法
+    public void bark() {
+        System.out.println("Woof! Woof!");
+    }
+}
+```
+
+### 3. 多态 (Polymorphism)
+
+多态是指允许一个接口或父类引用子类的对象，这样同一个接口或父类的方法调用可以有多种实现方式。
+
+```java
+// 父类
+public class Shape {
+    public void draw() {
+        System.out.println("Drawing a shape.");
+    }
+}
+
+// 子类
+public class Circle extends Shape {
+    // 重写父类的方法
+    @Override
+    public void draw() {
+        System.out.println("Drawing a circle.");
+    }
+}
+
+// 另一个子类
+public class Square extends Shape {
+    // 重写父类的方法
+    @Override
+    public void draw() {
+        System.out.println("Drawing a square.");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        // 多态的使用
+        Shape shape1 = new Circle();
+        Shape shape2 = new Square();
+
+        shape1.draw(); // 输出: Drawing a circle.
+        shape2.draw(); // 输出: Drawing a square.
+    }
+}
+```
+
+这段代码中，`Shape` 类的 `draw` 方法被两个子类 `Circle` 和 `Square` 重写了。在主方法中，我们可以使用 `Shape` 类型的引用来引用它的子类对象，并调用 `draw` 方法，但实际执行的方法是子类的版本。这就是多态的表现。
+
+---
+> 请介绍一下 Java 中的基本数据类型，可以结合表格或者代码，并给出带注释的代码示例。请在答案前引用此请求，使用 Markdown 格式，确保中英文之间有空格。
+
+### Java 的基本数据类型
+
+Java 语言提供了 8 种基本数据类型，分为四类：整数、浮点数、字符和布尔类型。
+
+以下是 Java 的基本数据类型的简要概述：
+
+| 数据类型 | 描述 | 大小 | 示例 |
+|----------|------|------|------|
+| byte     | 8位有符号整数 | 8 bits | `byte a = 100;` |
+| short    | 16位有符号整数 | 16 bits | `short b = 10000;` |
+| int      | 32位有符号整数 | 32 bits | `int c = 100000;` |
+| long     | 64位有符号整数 | 64 bits | `long d = 100000L;` |
+| float    | 单精度浮点数 | 32 bits | `float e = 3.14f;` |
+| double   | 双精度浮点数 | 64 bits | `double f = 3.141592653589793;` |
+| char     | 单一字符 | 16 bits | `char g = 'A';` |
+| boolean  | 布尔值，`true` 或 `false` | 1 bit | `boolean h = true;` |
+
+#### 代码示例：
+
+```java
+public class PrimitiveTypes {
+    public static void main(String[] args) {
+        // 整数类型
+        byte a = 100;         // 8位有符号整数
+        short b = 10000;      // 16位有符号整数
+        int c = 100000;       // 32位有符号整数
+        long d = 100000L;     // 64位有符号整数
+        
+        // 浮点数类型
+        float e = 3.14f;      // 单精度浮点数
+        double f = 3.141592653589793;  // 双精度浮点数
+        
+        // 字符类型
+        char g = 'A';         // 单一字符
+        
+        // 布尔类型
+        boolean h = true;     // 布尔值
+        
+        System.out.println("byte: " + a);
+        System.out.println("short: " + b);
+        System.out.println("int: " + c);
+        System.out.println("long: " + d);
+        System.out.println("float: " + e);
+        System.out.println("double: " + f);
+        System.out.println("char: " + g);
+        System.out.println("boolean: " + h);
+    }
+}
+```
+
+这些基本数据类型与对象不同，它们不是类的实例。但是，为了方便操作，Java 为这些基本数据类型提供了对应的包装类，如 `Integer`、`Double`、`Character` 等。
