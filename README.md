@@ -15,11 +15,11 @@ An in-depth tutorial on programming languages, brewed with the essence of ChatGP
 - [🤝 欢迎 PR 合入其他语言](https://github.com/Skykai521/ChatGPT-Code-Tutorial/pulls)
 
 ## 💡 ChatGPT 提问 prompt 模板：
-[你的问题]，并简要介绍它的实现原理。如有必要，请结合代码示例进行说明。确保回答采用 Markdown 格式，且中英文之间需有空格。在答案开头引用此请求，并在引用之前添加分割线。
+[你的问题]，并简要介绍它的实现原理。如有必要，请结合代码示例进行说明。确保回答采用 Markdown 格式，且中英文之间需有空格。请把这段话作为引用格式写在答案开头。并在引用之前添加分割线。
 
 示例：
 
-> 请介绍下 Java 中的 HashMap 类，并简要介绍它的实现原理。如有必要，请结合代码示例进行说明。确保回答采用 Markdown 格式，且中英文之间需有空格。在答案开头引用此请求，并在引用之前添加分割线。
+> 请介绍下 Java 中的 HashMap 类，并简要介绍它的实现原理。如有必要，请结合代码示例进行说明。确保回答采用 Markdown 格式，且中英文之间需有空格。请把这段话作为引用格式写在答案开头。并在引用之前添加分割线。
 
 ## ✅ PR 规范
 为保持一致性，请参考现有文档的格式进行 PR。
